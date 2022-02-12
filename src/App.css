@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
+  /* height: 200vh; */
+}
+
+.nav {
+  position: fixed;
+  z-index: 10000;
 }
 
 .App-logo {

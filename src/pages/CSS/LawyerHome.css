@@ -1,0 +1,24 @@
+.main_law {
+    height: 200vh;
+    display: flex;
+}
+
+/* law navbar */
+
+.law_nav {
+    margin-top: 3em;
+    width: 250px;
+    height: calc(100vh-3rem);
+    /* background-color: rgba(226, 226, 226, 1); */
+    background-color: #f2f2f2;
+    z-index: 10;
+}
+
+
+/* law content */
+
+.law_content {
+    padding-top: 3em;
+    width: calc(100% - 200px);
+    height: 100%;
+}

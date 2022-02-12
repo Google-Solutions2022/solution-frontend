@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&family=Playfair+Display:ital@1&display=swap");
+
+.App_Navbar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 3em;
+}
+.top_nav {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_logo {
+  line-height: 2em;
+  font-size: 1.5rem;
+  text-align: center;
+  /* color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+  color: #f5f7fa;
+  font-family: "Imperial Script", cursive;
+  font-family: "Playfair Display", serif;
+}
+
+.right_s {
+  display: flex;
+  justify-content: right;
+}
+
+.right_opt {
+  margin: 10px 10px;
+}
+
+.noti_logo {
+  font-size: 26px;
+  color: rgb(224, 224, 224);
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.logo_user {
+  border: 1px solid #ddd;
+}
+
+.btn {
+  line-height: 30px;
+  border-radius: 24px;
+  padding: 0 10px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.btn_emer {
+  background-image: linear-gradient(120deg, #ffcc00 0%, #ff9900 100%);
+}
+
+.btn_login {
+  /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+@media screen and (max-width: 450px) {
+    .nav_logo {
+        font-size: 1.2rem;
+        line-height: 1.8em;
+    }
+    .btn{
+        font-size: 0.8rem;        
+    }
+    .top_nav {
+        width: 98%;
+      }
+}
