@@ -1,0 +1,64 @@
+.available_doc {
+    width: 96%;
+    margin: 0 2%;
+    /* max-width: 800px; */
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.doc_card {
+    background-color: #f2f2f2;
+    border: 1px solid #000;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+    padding: 4px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+.doc_left {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 24px;
+    line-height: 30px;
+    color: rgb(83, 83, 83);
+}
+
+.doc_logo {
+    width: 30px;
+    font-size: 24px;
+    line-height: 30px;
+    /* height: 30px; */
+    margin: 0 10px;
+}
+
+.doc_right {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 10px;
+}
+
+.issuer {
+    line-height: 20px;
+    font-size: 18px;
+}
+
+.issue_date {
+    font-size: 14px;
+    color: #696969;
+}
+
+.more_info {
+    margin: 0 10px;
+}
+
+.logo_down {
+    font-size: 24px;
+    background-color: #8d8d8d;
+    padding: 0 6px;
+    border-radius: 50%;
+}

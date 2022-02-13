@@ -1,5 +1,5 @@
 .main_law {
-    height: 200vh;
+    height: fit-content;
     display: flex;
 }
 
@@ -8,10 +8,14 @@
 .law_nav {
     margin-top: 3em;
     width: 250px;
-    height: calc(100vh-3rem);
+    /* height: calc(100vh-3rem); */
+    height: 100vh;
+    overflow: hidden;
     /* background-color: rgba(226, 226, 226, 1); */
     background-color: #f2f2f2;
     z-index: 10;
+    position: fixed;
+    display: block;
 }
 
 
@@ -19,6 +23,54 @@
 
 .law_content {
     padding-top: 3em;
-    width: calc(100% - 200px);
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    background-color: #ddd;
     height: 100%;
+    min-height: calc(100vh - 3rem);
+}
+
+@media screen and (max-width: 900px) {
+    .law_nav {
+        display: none;
+    }
+    .law_content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.toggle_side {
+    position: fixed;
+    margin: 0.5rem;
+    margin-top: 3rem;
+    cursor: pointer;
+    background: #999999;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1.5rem;
+    display: none;
+}
+
+.toggle {
+    display: none;
+    margin-left: 0.5rem;
+    /* margin-top: 3rem; */
+    font-size: 1.2rem;
+}
+.toggle.active {
+    display: block;
+}
+
+@media screen and (max-width: 900px) {
+    .law_nav_opts {
+        display: none;
+    }
+    .law_nav_opts.active {
+        display: block;
+    }
+    .toggle_side {
+        display: block;
+    }
 }

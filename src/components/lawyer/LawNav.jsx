@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 import './CSS/LawNav.css'
 
 const LawNav = () => {
+
   return (
     <div>
-      <ul className="law_nav_opts">
+      <ul className="law_nav_opts" id="navOpt">
         <li className="law_opt active">
           <Link to="/LawyerHome" className="navbar_opt">
             <div className="opt_logo"><FontAwesomeIcon icon={faHouse} /></div>
