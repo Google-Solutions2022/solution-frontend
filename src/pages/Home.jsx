@@ -1,4 +1,10 @@
 import React from 'react'
+import './style.css'
+import svg2 from './pic/2.svg'
+import gif1 from './pic/5482-connect.gif'
+import dhruv from './pic/3.svg'
+import dhvani from './pic/7.jpg'
+
 
 const Home = () => {
   return (

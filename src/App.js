@@ -12,6 +12,7 @@ import AboutUs from "./pages/AboutUs" ;
 import NotFound from './pages/NotFound';
 import LawyerHome from './pages/LawyerHome';
 import Navbar from './components/Navbar';
+import Home from './pages/Home'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/aboutUS" exact element={<AboutUs />} />
         <Route path="/notFound" exact element={<NotFound />} />
         <Route path="/lawyerHome/*" exact element={<LawyerHome />} />
+        <Route path="/home" exact element={<Home/>}/>
         </Routes>
       </div>
     </Router>
