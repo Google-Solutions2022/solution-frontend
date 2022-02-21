@@ -1,0 +1,44 @@
+front end
+home - "Mohit, Jevin"
+footer - "Dhvani"
+
+Law Home - "Harsh Mavani"
+Law Documents - "Mohit"
+Law Question - "Jevin"
+Law Meet - "Harsh Mavani"
+Law Navbar - "Mohit"
+
+Emergency Page - "Dhruv Panchal"
+ 
+Doctor Home - "Harsh Mavani"
+Doctor Documents - "Mohit"
+Doctor Question - "Jevin"
+Doctor Meet - "Harsh Mavani"
+Doctor Navbar - "Mohit"
+
+userProfile - "Dhvani"
+
+login, register
+
+backend
+"name": "Mohit",
+"email": "agrawa@gmail.com",
+"password": "123456",
+"phoneNumber": 9146328339,
+"role": "user",
+"gender": "Male",
+"doc": [],
+"question": [],
+"answered": [],
+
+APIS
+login, register - "Mohit"
+Access All the user - "Dhruv"
+Access all the doctor - "
+
+Upload Documents
+get law Documents
+get law chat
+
+get doctor Documents
+doctor Documents
