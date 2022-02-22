@@ -1,0 +1,33 @@
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #53f;
+    background: linear-gradient(95deg,#5533ff 40%,#25ddf5 100%);
+    -webkit-transform: skewY(-12deg);
+    transform: skewY(-12deg);
+    -webkit-transform-origin: 0;
+    transform-origin: 0;
+    z-index: -12;
+}
+
+.home_landing {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}
+
+.landing_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    align-items: center;
+}
