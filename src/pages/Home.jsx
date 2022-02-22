@@ -8,7 +8,9 @@ const Home = () => {
         <div className="overlay"></div>
         <div className="home_landing">
           <div className="landing_container">
-            <div className="colLanding txt_land"></div>
+            <div className="colLanding txt_land">
+              <h1 className='land_heading'> fgfgfgg </h1>
+            </div>
             <div className="colLanding img_land"></div>
           </div>
         </div>
