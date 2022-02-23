@@ -7,9 +7,6 @@ import './CSS/LawNav.css'
 const LawNav = () => {
 
   return (
-
-    
-
     <div>
       <ul className="law_nav_opts" id="navOpt">
         <li className="law_opt active">

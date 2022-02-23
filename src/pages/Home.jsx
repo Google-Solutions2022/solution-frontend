@@ -8,7 +8,7 @@ import linkedinLogo from './images/icons/linkedin.png'
 
 const Home = () => {
   return (
-    <>
+    <div className='Home_Page'>
     {/* header_landing */}
       <header>
         <div className="overlay"></div>
@@ -182,7 +182,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </ div>
   )
 }
 
