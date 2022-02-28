@@ -1,54 +1,89 @@
-import { faDownload, faFileArrowUp, faFileLines } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleRight, faCancel, faDownload, faFileLines, faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import React, { useState } from 'react'
+import { storage } from '../../Firebase/firebase.js'
 import documentData from '../../Json_files/law_docs.js'
 import './CSS/LawDoc.css'
 const LawDoc = () => {
-  const [up, setUp] = useState("closed");
-  function open() {
-    const uploadC = document.getElementById("upload_container");
-    const uploadB = document.getElementById("upload_body");
-    if(up === "closed") {
-      setUp("opened");
-      uploadC.classList.remove("open");
-      uploadB.classList.add("active");
-    }
+  //upload file logic 
+  const [upFileLink, setupFileLink] = useState("");
+  const uploadForm = (e) => {
+    e.preventDefault();
+    console.log(e.target[1].files[0]);
+    const file = e.target[1].files[0];
+    console.log(file);
+    uploadFiles(file);
+    console.log(upFileLink);
   }
-  function close() {
-    const uploadC = document.getElementById("upload_container");
-    const uploadB = document.getElementById("upload_body");
-    if(up === "opened") {
-      setUp("opened");
-      uploadC.classList.add("open");
-      uploadB.classList.remove("active");
+
+  const uploadFiles = (file) => {
+    if (!file) return;
+    const storageRef = ref(storage, `/lawFiles/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on("state_changed", (snapshot) => {
+      const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+      console.log(prog);
+    }, (err) => console.log(err),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref)
+          .then((url) => {
+            setupFileLink(url);
+            console.log(url);
+          })
+      })
+  }
+
+  //upload container logic
+  const [up, setUp] = useState("close");
+
+  const upload = () => {
+    const uploadContainer = document.getElementById('up_container');
+    if (up === 'close') {
+      uploadContainer.classList.add("active");
+      setUp("open");
+    }
+    else {
+      uploadContainer.classList.remove("active");
+      setUp("close");
     }
   }
   return (
     <div>
       <div className="law_docs">
         <div className="upload_docs">
-          <div className="upload_docs_head open" id="upload_conatiner">
-            <h3 className="upload_head active" onClick={()=>open()}>Upload your document Here</h3>
-            <div className="doc_upload" id="upload_body">
-              <form action="../">
-                <div className="form-floating mb-3">
-                  <input type="text" className="form-control updoc_name" id="floatingInput" placeholder="Document Name" />
-                  {/* <label for="floatingInput">Document Name</label> */}
+          <div className="upload_docs_head" id="upload_conatiner" onClick={upload}>
+            <h3 className="upload_head" >Upload your document Here</h3>
+          </div>
+          <div className="upload_docs_body" id='up_container'>
+            <div className="upload_body">
+              <form onSubmit={uploadForm} className='upload_form'>
+                <div className="upload_col">
+                  <input type="text" className='upload_doc_name' placeholder='Document Name' />
                 </div>
-                <div className="form-floating">
-                  <input type="text" className="form-control updoc_des" id="floatingInput" placeholder="Documnet Description" />
-                  {/* <label for="floatingPassword">Password</label> */}
-                </div>
-                <div className="form_down">
-                  <div className="upload_form">
-                    <input type="file" id="uploadFile" hidden />
-                    <label htmlFor="uploadFile">
-                      <FontAwesomeIcon icon={faFileArrowUp} />
-                    </label>
-                  </div>
-                  <div className="upload_act">
-                    <button className="btn cancel_btn" onClick={close}>Cancel</button>
-                    <button className="btn upload_btn">Upload</button>
+                <div className="upload_col">
+                  <div className="upload_column">
+                    <div className="upload_row">
+                      <input type="file" name="" id="uploadFile" hidden />
+                      <label htmlFor="uploadFile" className="uploadFileicon">
+                        <FontAwesomeIcon icon={faFileUpload} />
+                      </label>
+                    </div>
+                    <div className="upload_row">
+                      <div className="upload_opts">
+                        <div className="upload_btn">
+                          <div className='btn_s btn' onClick={upload}>
+                            <FontAwesomeIcon icon={faCancel} /> Cancel
+                          </div>
+                        </div>
+                        <div className="upload_btn btn_submit">
+                          <button type='submit' className="btn_s btn">
+                            <FontAwesomeIcon icon={faAngleDoubleRight} /> Submit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </form>

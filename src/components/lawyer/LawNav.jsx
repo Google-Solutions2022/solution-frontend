@@ -7,9 +7,6 @@ import './CSS/LawNav.css'
 const LawNav = () => {
 
   return (
-
-    
-
     <div>
       <ul className="law_nav_opts" id="navOpt">
         <li className="law_opt active">
@@ -31,7 +28,7 @@ const LawNav = () => {
           </Link>
         </li>
         <li className="law_opt">
-          <Link to="/LawyerHome" className="navbar_opt">
+          <Link to="/LawyerHome/documents" className="navbar_opt">
             <div className="opt_logo"><FontAwesomeIcon icon={faFileLines} /></div>
             <div className="opt_text">Documents</div>
           </Link>

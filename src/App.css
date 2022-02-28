@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   overflow-x: hidden;
+  width: 100vw;
+  /* background-color: #fff; */
 }
 
 .nav {
