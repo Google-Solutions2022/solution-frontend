@@ -95,86 +95,86 @@ const Home = () => {
             <h3>Team Members</h3>
           </div>
           <div className="content_team">
-            <div class="team_card card">
-              <div class="team_content">
-                <div class="mem_img">
+            <div className="team_card card">
+              <div className="team_content">
+                <div className="mem_img">
                   <img src="https://img.etimg.com/thumb/msid-74074353,width-1200,height-900,imgsize-572331,overlay-etpanache/photo.jpg" alt="" />
                 </div>
-                <div class="team_contentBx">
+                <div className="team_contentBx">
                   <h3>Mohit Agrawal <br /> <span> CreativeDesigner </span></h3>
                 </div>
               </div>
-              <ul class="sci">
-                <li className='socialItems' Style="--i:1">
+              <ul className="sci">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={githubLogo} alt="github" /></a>
                 </li>
-                <li className='socialItems' Style="--i:2">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={linkedinLogo} alt="linkedin" /></a>
                 </li>
-                <li className='socialItems' Style="--i:3">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={instaLogo} alt="instagram" /></a>
                 </li>
               </ul>
             </div>
-            <div class="team_card card">
-              <div class="team_content">
-                <div class="mem_img">
+            <div className="team_card card">
+              <div className="team_content">
+                <div className="mem_img">
                   <img src="https://img.etimg.com/thumb/msid-74074353,width-1200,height-900,imgsize-572331,overlay-etpanache/photo.jpg" alt="" />
                 </div>
-                <div class="team_contentBx">
+                <div className="team_contentBx">
                   <h3>Dhavni Shah <br /> <span> CreativeDesigner </span></h3>
                 </div>
               </div>
-              <ul class="sci">
-                <li className='socialItems' Style="--i:1">
+              <ul className="sci">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={githubLogo} alt="github" /></a>
                 </li>
-                <li className='socialItems' Style="--i:2">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={linkedinLogo} alt="linkedin" /></a>
                 </li>
-                <li className='socialItems' Style="--i:3">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={instaLogo} alt="instagram" /></a>
                 </li>
               </ul>
             </div>
-            <div class="team_card card">
-              <div class="team_content">
-                <div class="mem_img">
+            <div className="team_card card">
+              <div className="team_content">
+                <div className="mem_img">
                   <img src="https://img.etimg.com/thumb/msid-74074353,width-1200,height-900,imgsize-572331,overlay-etpanache/photo.jpg" alt="" />
                 </div>
-                <div class="team_contentBx">
+                <div className="team_contentBx">
                   <h3>Dhruv Panchal <br /> <span> CreativeDesigner </span></h3>
                 </div>
               </div>
-              <ul class="sci">
-                <li className='socialItems' Style="--i:1">
+              <ul className="sci">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={githubLogo} alt="github" /></a>
                 </li>
-                <li className='socialItems' Style="--i:2">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={linkedinLogo} alt="linkedin" /></a>
                 </li>
-                <li className='socialItems' Style="--i:3">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={instaLogo} alt="instagram" /></a>
                 </li>
               </ul>
             </div>
-            <div class="team_card card">
-              <div class="team_content">
-                <div class="mem_img">
+            <div className="team_card card">
+              <div className="team_content">
+                <div className="mem_img">
                   <img src="https://img.etimg.com/thumb/msid-74074353,width-1200,height-900,imgsize-572331,overlay-etpanache/photo.jpg" alt="" />
                 </div>
-                <div class="team_contentBx">
+                <div className="team_contentBx">
                   <h3>Harsh Mavani <br /> <span> CreativeDesigner </span></h3>
                 </div>
               </div>
-              <ul class="sci">
-                <li className='socialItems' Style="--i:1">
+              <ul className="sci">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={githubLogo} alt="github" /></a>
                 </li>
-                <li className='socialItems' Style="--i:2">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={linkedinLogo} alt="linkedin" /></a>
                 </li>
-                <li className='socialItems' Style="--i:3">
+                <li className='socialItems' >
                   <a href="/"><img className='socialLogo' src={instaLogo} alt="instagram" /></a>
                 </li>
               </ul>

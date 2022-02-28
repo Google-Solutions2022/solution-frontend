@@ -11,6 +11,7 @@ import AuthHome from "./pages/AuthHome";
 import AboutUs from "./pages/AboutUs";
 import NotFound from './pages/NotFound';
 import LawyerHome from './pages/LawyerHome';
+import DoctorHome from './pages/DoctorHome';
 import Navbar from './components/Navbar';
 import Home from './pages/Home'
 import Footer from './components/Footer';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/aboutUS" exact element={<AboutUs />} />
           <Route path="/notFound" exact element={<NotFound />} />
           <Route path="/lawyerHome/*" exact element={<LawyerHome />} />
+          <Route path="/doctorHome/*" exact element={<DoctorHome />} />
         </Routes>
         <div className='foot'>
           <Footer/>

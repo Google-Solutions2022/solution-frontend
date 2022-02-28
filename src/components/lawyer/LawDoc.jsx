@@ -1,14 +1,46 @@
-import { faAngleDoubleRight, faCancel, faDownload, faFile, faFileExport, faFileLines, faFileUpload } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleRight, faCancel, faDownload, faFileLines, faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import React, { useState } from 'react'
+import { storage } from '../../Firebase/firebase.js'
 import documentData from '../../Json_files/law_docs.js'
 import './CSS/LawDoc.css'
 const LawDoc = () => {
+  //upload file logic 
+  const [upFileLink, setupFileLink] = useState("");
+  const uploadForm = (e) => {
+    e.preventDefault();
+    console.log(e.target[1].files[0]);
+    const file = e.target[1].files[0];
+    console.log(file);
+    uploadFiles(file);
+    console.log(upFileLink);
+  }
+
+  const uploadFiles = (file) => {
+    if (!file) return;
+    const storageRef = ref(storage, `/lawFiles/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on("state_changed", (snapshot) => {
+      const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+      console.log(prog);
+    }, (err) => console.log(err),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref)
+          .then((url) => {
+            setupFileLink(url);
+            console.log(url);
+          })
+      })
+  }
+
+  //upload container logic
   const [up, setUp] = useState("close");
 
   const upload = () => {
     const uploadContainer = document.getElementById('up_container');
-    if(up === 'close') {
+    if (up === 'close') {
       uploadContainer.classList.add("active");
       setUp("open");
     }
@@ -26,7 +58,7 @@ const LawDoc = () => {
           </div>
           <div className="upload_docs_body" id='up_container'>
             <div className="upload_body">
-              <form action="" className='upload_form'>
+              <form onSubmit={uploadForm} className='upload_form'>
                 <div className="upload_col">
                   <input type="text" className='upload_doc_name' placeholder='Document Name' />
                 </div>
@@ -46,7 +78,7 @@ const LawDoc = () => {
                           </div>
                         </div>
                         <div className="upload_btn btn_submit">
-                          <button className="btn_s btn">
+                          <button type='submit' className="btn_s btn">
                             <FontAwesomeIcon icon={faAngleDoubleRight} /> Submit
                           </button>
                         </div>
