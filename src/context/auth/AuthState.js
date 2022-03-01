@@ -50,13 +50,14 @@ const AuthState = (props) => {
                 type: REGISTER_USER,
                 payload: res.data
             });
+
             loadUser();
 
         } catch (err) {
-            console.log(err);
+            // console.log(err.response.data.Eror);
             dispatch({
                 type: AUTH_FAIL,
-                payload: err.response.data.msg
+                payload: err.response.data.Eror
             });
         }
     };
@@ -65,22 +66,22 @@ const AuthState = (props) => {
     //LOGIN
     const login = async user => {
         try {
-            const config = {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            };
-            const res = await axios.post("/api/auth/login", user, config);
+            
+            const res = await axios.post("http://localhost:5000/api/auth/login", user);
+
+            // console.log(res.data.userToken);
+
             dispatch({
                 type: LOGIN_USER,
                 payload: res.data
             });
-            // loadUser();
+
+            loadUser();
         } catch (err) {
-            console.log(err.response.data.msg);
+            console.log(err.response.data.Eror);
             dispatch({
                 type: AUTH_FAIL,
-                payload: err.response.data.msg
+                payload: err.response.data.Eror
             });
         }
     };
@@ -95,9 +96,13 @@ const AuthState = (props) => {
 
         try {
             const res = await axios.get("http://localhost:5000/api/auth");
+
+            // console.log("res: ",res.data.data);
+
+
             dispatch({
                 type: USER_LOADED,
-                payload: res.data
+                payload: res.data.data
             });
         } catch (err) {
             dispatch({ type: AUTH_FAIL });
@@ -122,6 +127,10 @@ const AuthState = (props) => {
                 isAuthenticated: state.isAuthenticated,
                 error: state.error,
                 register,
+                loadUser,
+                login,
+                logout,
+
 
 
             }}

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import './CSS/Register.css'
 import logo from "./images/img-01.png"
 import { MdArrowRightAlt, MdEmail } from "react-icons/md";
@@ -20,6 +21,8 @@ const defaultOptions = {
 
 
 const Register = (props) => {
+
+  let navigate = useNavigate();
 
   const [user, setUser] = useState({
     name: "",
@@ -49,28 +52,26 @@ const Register = (props) => {
   // };
 
 
-  const { isAuthenticated, register } = authContext;
+  const { isAuthenticated, register, error } = authContext;
 
   // console.log(isAuthenticated);
 
-  const { name, email, password, confirmPassword, role, gender, dob } = user;
+  const { name, email, password, confirmPassword, role, gender, dob, phoneNumber } = user;
 
 
 
   useEffect(() => {
     if (isAuthenticated === true) {
-      // props.history.push("/authHome");
-      Navigate('/authHome');
+      // Navigate('/authHome');
+      // console.log("user from register:", user)
+      navigate("/authHome");
     }
 
-    // if (error) {
-    //   // setAlert(error, "danger");
-    //   // clearErrors();
-    //   alert(error);
-    // }
-    // const M = window.M;
-    // M.FormSelect.init(document.querySelector("select"));
-  }, [isAuthenticated]);
+    if (error) {
+      alert(error);
+      error = null;
+    }
+  }, [isAuthenticated,error]);
 
 
 
@@ -130,6 +131,7 @@ const Register = (props) => {
                 type="text"
                 name="name"
                 placeholder="name"
+                value={name}
                 onChange={onChange}
                 required
               />
@@ -145,6 +147,7 @@ const Register = (props) => {
                 className="input100"
                 type="text"
                 name="email"
+                value={email}
                 placeholder="Email"
                 onChange={onChange}
                 required
@@ -160,7 +163,9 @@ const Register = (props) => {
               <input
                 className="input100"
                 type="text"
+                value={phoneNumber}
                 name="phoneNumber"
+                onChange={onChange}
                 placeholder="Phone Number"
               />
               <span className="focus-input100"></span>
@@ -180,6 +185,7 @@ const Register = (props) => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                value={password}
                 onChange={onChange}
                 required
               />
@@ -196,6 +202,7 @@ const Register = (props) => {
                 type="password"
                 name="confirmPassword"
                 placeholder="Confirm Password"
+                value={confirmPassword}
                 onChange={onChange}
                 required
               />
@@ -212,6 +219,7 @@ const Register = (props) => {
                 type="date"
                 name="dob"
                 placeholder="BirthDate"
+                value={dob}
                 onChange={onChange}
                 required
               />

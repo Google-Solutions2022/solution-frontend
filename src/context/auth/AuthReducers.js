@@ -20,6 +20,7 @@ export default (state, action) => {
                 isAuthenticated: true,
                 loading: false
             };
+            break;
 
         case USER_LOADED:
             return {
@@ -28,16 +29,18 @@ export default (state, action) => {
                 loading: false,
                 user: action.payload.user
             };
+            break;
 
         case LOGIN_USER:
-            localStorage.setItem("token", action.payload.token);
+            localStorage.setItem("token", action.payload.userToken);
             return {
                 ...state,
                 isAuthenticated: true,
                 loading: false
             };
+            break;
         case AUTH_FAIL:
-
+            break;
 
         case LOGOUT:
             localStorage.removeItem("token");
@@ -49,6 +52,7 @@ export default (state, action) => {
                 loading: true,
                 error: action.payload
             };
+            break;
 
         default:
             return state;
