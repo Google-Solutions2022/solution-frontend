@@ -67,7 +67,7 @@
     display: block;
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
     .law_nav_opts {
         display: none;
     }
@@ -77,4 +77,4 @@
     .toggle_side {
         display: block;
     }
-}
+} */

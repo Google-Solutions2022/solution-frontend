@@ -34,6 +34,9 @@
     .law_nav {
         display: none;
     }
+    .law_nav.active {
+        display: block;
+    }
     .law_content {
         margin-left: 0;
         width: 100%;
@@ -43,34 +46,21 @@
 .toggle_side {
     position: fixed;
     margin: 0.5rem;
-    margin-top: 3rem;
+    /* margin-top: 1rem; */
     cursor: pointer;
-    background: #999999;
+    /* background: #999999; */
+    background: rgba(221, 221, 221, 0.24);
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
-    line-height: 1.5rem;
-    display: none;
+    line-height: 2rem;
+    display: block;
+    z-index: 10000;
 }
 
 .toggle {
-    display: none;
-    margin-left: 0.5rem;
-    /* margin-top: 3rem; */
-    font-size: 1.2rem;
-}
-.toggle.active {
     display: block;
-}
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
 
-@media screen and (max-width: 900px) {
-    .law_nav_opts {
-        display: none;
-    }
-    .law_nav_opts.active {
-        display: block;
-    }
-    .toggle_side {
-        display: block;
-    }
 }

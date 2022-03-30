@@ -2,6 +2,7 @@ import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import './CSS/Navbar.css'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -28,7 +29,10 @@ const Navbar = () => {
                         </div> */}
                         <div className="auth_navbar">
                             <div className="nav_login_button">
-                                <button className="btn btn_login">Login / SignUp</button>
+                            
+                                <Link to="/login"  >
+                                    <button className="btn btn_login">Login / SignUp</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

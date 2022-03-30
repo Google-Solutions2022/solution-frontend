@@ -1,0 +1,66 @@
+.main_law {
+    height: fit-content;
+    display: flex;
+}
+
+/* doctor navbar */
+
+.law_nav {
+    margin-top: 3em;
+    width: 250px;
+    /* height: calc(100vh-3rem); */
+    height: 100vh;
+    overflow: hidden;
+    /* background-color: rgba(226, 226, 226, 1); */
+    background-color: #f2f2f2;
+    z-index: 10;
+    position: fixed;
+    display: block;
+}
+
+
+/* law content */
+
+.law_content {
+    padding-top: 3em;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    background-color: #ddd;
+    height: 100%;
+    min-height: calc(100vh - 3rem);
+}
+
+@media screen and (max-width: 900px) {
+    .law_nav {
+        display: none;
+    }
+    .law_nav.active {
+        display: block;
+    }
+    .law_content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.toggle_side {
+    position: fixed;
+    margin: 0.5rem;
+    /* margin-top: 1rem; */
+    cursor: pointer;
+    /* background: #999999; */
+    background: rgba(221, 221, 221, 0.24);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: block;
+    z-index: 10000;
+}
+
+.toggle {
+    display: block;
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+
+}

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import './CSS/Register.css'
 import logo from "./images/img-01.png"
 import { MdArrowRightAlt, MdEmail } from "react-icons/md";
 import { BsLockFill } from "react-icons/bs";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import animationData from '../utils/lotties/animi.json'
+import AuthContext from '../context/auth/AuthContext';
 
 
 const defaultOptions = {
@@ -18,14 +20,91 @@ const defaultOptions = {
 };
 
 
-const Register = () => {
+const Register = (props) => {
+
+  let navigate = useNavigate();
+
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    role: "null",
+    gender: "null",
+    dob: "",
+    phoneNumber: ""
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+
+  const authContext = useContext(AuthContext);
+
+
+
+
+  const onChange = e => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  // const handleSelectChange = e => {
+  //   setUser({ ...user, role: e.target.value });
+  // };
+
+
+  const { isAuthenticated, register, error } = authContext;
+
+  // console.log(isAuthenticated);
+
+  const { name, email, password, confirmPassword, role, gender, dob, phoneNumber } = user;
+
+
+
+  useEffect(() => {
+    if (isAuthenticated === true) {
+      // Navigate('/authHome');
+      // console.log("user from register:", user)
+      navigate("/authHome");
+    }
+
+    if (error) {
+      alert(error);
+      error = null;
+    }
+  }, [isAuthenticated,error]);
+
+
+
+
+  const onSubmit = e => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+
+    } else if (role === "null") {
+      alert("Please select a role");
+
+    } else if (gender === "null") {
+      alert("Select your gender first");
+    }
+    else {
+      setIsLoading(true);
+      register(user);
+      
+      console.log("register");
+      // console.log(user);
+      setIsLoading(false);
+    }
+  };
+
   return (
 
-    <div class="limiter">
+    <div className="limiter">
 
-      <div class="container-login100">
-        <div class="wrap-login100">
-          <div class="login100-pic js-tilt" >
+      <div className="container-login100">
+        <div className="wrap-login100">
+
+          <div className="login100-pic js-tilt" >
 
 
             {
@@ -40,48 +119,187 @@ const Register = () => {
 
           </div>
 
-          <form class="login100-form validate-form">
-            <span class="login100-form-title">
+          <form className="login100-form validate-form" onSubmit={onSubmit} >
+            <span className="login100-form-title">
               ACCESS DENIED WEBSITE
             </span>
 
-            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-              <input class="input100" type="text" name="email" placeholder="Email" />
-              <span class="focus-input100"></span>
-              <span class="symbol-input100">
+
+            <div className="wrap-input100 validate-input" data-validate="Valid name is required: Dhruv Panchal">
+              <input
+                className="input100"
+                type="text"
+                name="name"
+                placeholder="name"
+                value={name}
+                onChange={onChange}
+                required
+              />
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
                 <MdEmail />
               </span>
             </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Password is required">
-              <input class="input100" type="password" name="password" placeholder="Password" />
-              <span class="focus-input100"></span>
-              <span class="symbol-input100">
+
+            <div className="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+              <input
+                className="input100"
+                type="text"
+                name="email"
+                value={email}
+                placeholder="Email"
+                onChange={onChange}
+                required
+              />
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
+                <MdEmail />
+              </span>
+            </div>
+
+
+            <div className="wrap-input100 validate-input" data-validate="Valid gender is required: male/female">
+              <input
+                className="input100"
+                type="text"
+                value={phoneNumber}
+                name="phoneNumber"
+                onChange={onChange}
+                placeholder="Phone Number"
+              />
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
+                <MdEmail />
+              </span>
+            </div>
+
+
+
+
+
+
+            <div className="wrap-input100 validate-input" data-validate="Password is required">
+              <input
+                className="input100"
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={password}
+                onChange={onChange}
+                required
+              />
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
                 <BsLockFill />
               </span>
             </div>
 
 
-            <div class="wrap-input100 validate-input" data-validate="Password is required">
-              <input class="input100" type="password" name="confirmpassword" placeholder="Confirm Password" />
-              <span class="focus-input100"></span>
-              <span class="symbol-input100">
+            <div className="wrap-input100 validate-input" data-validate="Password is required">
+              <input
+                className="input100"
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={onChange}
+                required
+              />
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
                 <BsLockFill />
               </span>
             </div>
 
-            <div class="container-login100-form-btn">
-              <button class="login100-form-btn">
-                Sign Up
-              </button>
+
+            <div className="wrap-input100 validate-input" data-validate="Date is required">
+              <input
+                className="input100"
+                type="date"
+                name="dob"
+                placeholder="BirthDate"
+                value={dob}
+                onChange={onChange}
+                required
+              />
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
+                {/* <BsLockFill /> */}
+              </span>
+            </div>
+
+
+
+            <div className="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" style={{ width: "110%" }} >
+              <select
+                required
+                className="input100"
+                value={role}
+                onChange={(e) => { setUser({ ...user, role: e.target.value }); }}
+              >
+                <option value="null" defaultValue>
+                  Choose your role
+                </option>
+                <option value="user">Consumer</option>
+                <option value="lawyer">Lawyer</option>
+                <option value="doctor">Doctor</option>
+              </select>
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
+                <MdEmail />
+              </span>
+            </div>
+
+
+            <div className="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" style={{ width: "110%" }} >
+              <select
+                required
+                className="input100"
+                value={gender}
+                onChange={(e) => { setUser({ ...user, gender: e.target.value }); }}
+              >
+                <option value="null" defaultValue>
+                  choose your gender
+                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+              </select>
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
+                <MdEmail />
+              </span>
+            </div>
+
+
+
+            <div className="container-login100-form-btn">
+
+              {
+                isLoading 
+                ?
+                  // <button className="login100-form-btn" disabled >
+                  //   Loading..
+                  // </button>
+                  console.log("...Loading")
+                  :
+                  <button className="login100-form-btn"  >
+                    Sign Up
+                  </button>
+
+              }
+
+
+
             </div>
 
             <br></br>
             <br></br>
 
 
-            <div class="">
-              <a class="txt2" href="#">
+            <div className="">
+              <a className="txt2" href="#">
                 <Link to='/login' >
                   Already have an account <MdArrowRightAlt />
                 </Link>
