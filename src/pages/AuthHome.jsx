@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import './CSS/AuthHome.css'
 import AuthContext from '../context/auth/AuthContext';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -12,15 +12,15 @@ const AuthHome = (props) => {
 
 
   const authContext = useContext(AuthContext);
-  const { user, isAuthenticated, loadUser  } = authContext
+  const { user, isAuthenticated, loadUser } = authContext;
 
   useEffect(() => {
-    if(user==null){
+    if (user == null) {
       loadUser();
-    }    
-    // console.log("user from authHome is: ", user);
+    }
+    console.log("user from authHome is: ", user);
   }, [user])
-  
+
   useEffect(() => {
     // console.log(isAuthenticated)
     if (isAuthenticated === false) {
@@ -32,14 +32,25 @@ const AuthHome = (props) => {
 
 
 
-  
-  
+
+
 
 
 
   return (
-    <div>AuthHome</div>
-    
+    <>
+      <div>AuthHome</div>
+      <br /><br />
+      <Link to="/lawyerHome">
+        <button >Go to Legal Work</button>
+      </Link>
+
+
+
+    </>
+
+
+
   )
 }
 

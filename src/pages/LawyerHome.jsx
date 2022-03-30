@@ -6,19 +6,41 @@ import Login from '../pages/Login'
 import LawDoc from '../components/lawyer/LawDoc'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { useContext, useEffect } from 'react'
+import AuthContext from '../context/auth/AuthContext';
 
-const LawyerHome = () => {
+const LawyerHome = (props) => {
+
+  const authContext = useContext(AuthContext);
+  const { user, isAuthenticated, loadUser } = authContext;
+
+  useEffect(() => {
+    if (user == null) {
+      loadUser();
+    }
+    // console.log("user from LawyerHome is: ", user);
+  }, [user])
+
+  useEffect(() => {
+    // console.log(isAuthenticated)
+    if (isAuthenticated === false) {
+      props.history.push("/login");
+    }
+
+  });
+
+
   const [side, setSide] = useState(false);
   const open = () => {
     const navOpt = document.getElementById("navOpt");
     if (!side) {
       navOpt.classList.add("active");
-      console.log("set Active");
+      // console.log("set Active");
       setSide(true);
     }
     else {
       navOpt.classList.remove("active");
-      console.log("remove Active");
+      // console.log("remove Active");
       setSide(false);
     }
   }
@@ -40,7 +62,7 @@ const LawyerHome = () => {
       <div className="law_content">
         <Routes>
           <Route path="/login" exact element={<Login />} />
-          <Route path="/documents" exact element={<LawDoc />} />
+          <Route path="/documents" exact element={<LawDoc props={user} />} />
         </Routes>
       </div>
     </ div>
