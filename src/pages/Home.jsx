@@ -124,7 +124,7 @@ const Home = () => {
                   <img src="https://previews.123rf.com/images/pandavector/pandavector1607/pandavector160700160/60027009-m%C3%A4dchen-symbol-flach-einzelbild-menschen-symbol-aus-der-gro%C3%9Fen-avatar-collection-vektorgrafik.jpg" alt="" />
                 </div>
                 <div className="team_contentBx">
-                  <h3>Dhavni Shah <br /> <span> CreativeDesigner </span></h3>
+                  <h3>Dhvani Shah <br /> <span> CreativeDesigner </span></h3>
                 </div>
               </div>
               <ul className="sci">
