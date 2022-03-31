@@ -15,6 +15,7 @@ import LawyerHome from './pages/LawyerHome';
 import DoctorHome from './pages/DoctorHome';
 import Navbar from './components/Navbar';
 import Home from './pages/Home'
+import SOS from './pages/SOS';
 import Footer from './components/Footer';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/notFound" exact element={<NotFound />} />
           <Route path="/lawyerHome/*" exact element={<LawyerHome />} />
           <Route path="/doctorHome/*" exact element={<DoctorHome />} />
+          <Route path="/SOS/*" exact element={<SOS />} />
         </Routes>
         <div className='foot'>
           <Footer/>
