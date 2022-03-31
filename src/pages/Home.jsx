@@ -5,6 +5,7 @@ import './CSS/Home.css'
 import instaLogo from './images/icons/instagram.png'
 import githubLogo from './images/icons/github.png'
 import linkedinLogo from './images/icons/linkedin.png'
+import review from './images/12.png'
 
 const Home = () => {
   return (
@@ -88,6 +89,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <img className='review' src={review} alt="instagram"></img>
       {/* team section  */}
       <div className="team_section">
         <div className="team_container container">
@@ -182,8 +184,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+       
       
+    
 
 
 
