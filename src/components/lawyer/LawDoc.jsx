@@ -28,13 +28,44 @@ const LawDoc = (props) => {
   //   getAllDocsOfTheUser();
   // }, [UploadedFiles]);
 
-  // useEffect(() => {
+//   useEffect(() => {
+//     //  axios.get(`http://localhost:5000/api/docs/getAllDocOfUser/${user._id}`)
+//     // .then((res) => {
+//     //     console.log(res);
+//     //     // setSalesInfo(res.data.sales)
+//     //     // setUploadedFiles(res);
+//     // })
+//     console.log("inside use Effect")
+// })
+  // useEffect(async ()=>{
+  //   //  getAllDocsOfTheUser();
+  //   let userId = user._id;
+  //   console.log(userId, " from get all docs user function");
 
-  //   // call getAllDocs
-  //   // console.log(docName);
-  //   getAllDocsOfTheUser();
 
-  // });
+  //   let AllDocs = await axios.get(`http://localhost:5000/api/docs/getAllDocOfUser/${userId}`);
+
+  //   console.log(AllDocs.data.data);
+
+  //   setUploadedFiles(AllDocs.data.data);
+
+  //  },[]);
+
+
+  const getAllDocsOfTheUser = async () => {
+
+    let userId = user._id;
+    console.log(userId, " from get all docs user function");
+
+
+    let AllDocs = await axios.get(`http://localhost:5000/api/docs/getAllDocOfUser/${userId}`);
+
+    console.log(AllDocs.data.data);
+
+    setUploadedFiles(AllDocs.data.data);
+
+  }
+
 
 
   const uploadForm = (e) => {
@@ -66,19 +97,6 @@ const LawDoc = (props) => {
   }
 
 
-  const getAllDocsOfTheUser = async () => {
-
-    let userId = user._id;
-    console.log(userId, " from get all docs user function");
-
-
-    let AllDocs = await axios.get(`http://localhost:5000/api/docs/getAllDocOfUser/${userId}`);
-
-    console.log(AllDocs.data.data);
-
-    setUploadedFiles(AllDocs.data.data);
-
-  }
 
 
 
@@ -130,7 +148,7 @@ const LawDoc = (props) => {
     }
   }
 
-  const convertDate =(get_date) => {
+  const convertDate = (get_date) => {
     let date = new Date(get_date);
 
     return (date.toDateString());
@@ -140,9 +158,8 @@ const LawDoc = (props) => {
 
 
 
-  //  useEffect(()=>{
-  //    getAllDocsOfTheUser();
-  //  },[UploadedFiles]);
+
+  // getAllDocsOfTheUser();
 
 
   return (
@@ -202,45 +219,46 @@ const LawDoc = (props) => {
             {/* {getAllDocsOfTheUser()} */}
 
             {
+             
 
-              // documentData.map((document) => (
-                UploadedFiles.map((document) => (
-                <div className="doc_card card" key={document._id}>
-                  <div className="doc_left">
-                    <div className="doc_logo">
-                      <div className="logo_doc">
-                        <FontAwesomeIcon icon={faFileLines} />
+                  documentData.map((document) => (
+                  // UploadedFiles.map((document) => (
+                    <div className="doc_card card" key={document._id}>
+                      <div className="doc_left">
+                        <div className="doc_logo">
+                          <div className="logo_doc">
+                            <FontAwesomeIcon icon={faFileLines} />
+                          </div>
+                        </div>
+                        <div className="doc_name">
+                          <h4>{document.docName}</h4>
+                        </div>
+                      </div>
+                      <div className="doc_right">
+                        <div className="more_info">
+                          <div className="issuer">
+                            <h5>{document.uploadName || "YOU"}</h5>
+                          </div>
+                          <div className="issue_date">
+                            <h6>{
+                              document.day ? (document.day, document.date) :
+                                convertDate(document.createdAt)
+                            }</h6>
+                            {/* <h6>{document.day}, {document.date}</h6> */}
+                          </div>
+                        </div>
+                        <div className="down_logo">
+                          <div className="logo_down">
+                            {/* <img className="logo_img" src={downloadLogo} alt="" /> */}
+                            <a href={document.docLink}>
+                              <FontAwesomeIcon icon={faDownload} />
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="doc_name">
-                      <h4>{document.docName}</h4>
-                    </div>
-                  </div>
-                  <div className="doc_right">
-                    <div className="more_info">
-                      <div className="issuer">
-                        <h5>{document.uploadName || "YOU"}</h5>
-                      </div>
-                      <div className="issue_date">
-                        <h6>{
-                          document.day ? (document.day, document.date) :
-                          convertDate(document.createdAt)
-                        }</h6>
-                        {/* <h6>{document.day}, {document.date}</h6> */}
-                      </div>
-                    </div>
-                    <div className="down_logo">
-                      <div className="logo_down">
-                        {/* <img className="logo_img" src={downloadLogo} alt="" /> */}
-                        <a href={document.docLink}>
-                          <FontAwesomeIcon icon={faDownload} />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))
-
+                  ))
+               
 
             }
 
