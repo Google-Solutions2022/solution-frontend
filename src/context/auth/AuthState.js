@@ -42,7 +42,7 @@ const AuthState = (props) => {
     const register = async user => {
         try {
             
-            const res = await axios.post("http://localhost:5000/api/auth/register", user);
+            const res = await axios.post("http://localhost:5001/api/auth/register", user);
 
             // console.log(res.data);
 
@@ -67,7 +67,7 @@ const AuthState = (props) => {
     const login = async user => {
         try {
             
-            const res = await axios.post("http://localhost:5000/api/auth/login", user);
+            const res = await axios.post("http://localhost:5001/api/auth/login", user);
 
             // console.log(res.data.userToken);
 
@@ -95,7 +95,7 @@ const AuthState = (props) => {
         }
 
         try {
-            const res = await axios.get("http://localhost:5000/api/auth");
+            const res = await axios.get("http://localhost:5001/api/auth");
 
             // console.log("res: ",res.data.data);
 

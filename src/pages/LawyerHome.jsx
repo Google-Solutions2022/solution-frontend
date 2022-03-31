@@ -63,6 +63,7 @@ const LawyerHome = (props) => {
         <Routes>
           <Route path="/login" exact element={<Login />} />
           <Route path="/documents" exact element={<LawDoc props={user} />} />
+          
         </Routes>
       </div>
     </ div>

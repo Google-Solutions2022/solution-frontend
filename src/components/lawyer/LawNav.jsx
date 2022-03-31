@@ -1,10 +1,12 @@
 import { faComments, faFileLines, faHeadset, faHouse, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import './CSS/LawNav.css'
 
 const LawNav = () => {
+
+  
 
   return (
     <div>
@@ -16,10 +18,12 @@ const LawNav = () => {
           </Link>
         </li>
         <li className="law_opt">
-          <Link to="/LawyerHome" className="navbar_opt">
+          <div className="navbar_opt">
             <div className="opt_logo"><FontAwesomeIcon icon={faHeadset} /></div>
-            <div className="opt_text">Live Consultancy</div>
-          </Link>
+            <a href="https://localhost:3001">
+              <div className="opt_text"  >Live Consultancy</div>
+            </a>
+          </div>
         </li>
         <li className="law_opt">
           <Link to="/LawyerHome" className="navbar_opt">

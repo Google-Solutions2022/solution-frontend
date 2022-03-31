@@ -58,7 +58,7 @@ const LawDoc = (props) => {
     console.log(userId, " from get all docs user function");
 
 
-    let AllDocs = await axios.get(`http://localhost:5000/api/docs/getAllDocOfUser/${userId}`);
+    let AllDocs = await axios.get(`http://localhost:5001/api/docs/getAllDocOfUser/${userId}`);
 
     console.log(AllDocs.data.data);
 
@@ -90,7 +90,7 @@ const LawDoc = (props) => {
     }
     console.log(data);
 
-    await axios.post('http://localhost:5000/api/docs/upload', data);
+    await axios.post('http://localhost:5001/api/docs/upload', data);
 
     console.log("api call ends");
 
