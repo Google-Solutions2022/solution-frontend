@@ -6,26 +6,26 @@ import './CSS/SOS.css'
 
 const SOS = () => {
   return (
-    <div className='Home_Page'>
+    <div className='SOS_Page'>
     {/* header_landing */}
       <header>
-        <div className="overlay"></div>
-        <div className="home_landing">
+        <div className="SOSoverlay"></div>
+        <div className="SOS_landing">
           <div className="landing_container">
             <div className="colLanding txt_land">
               <div className="text_landing">
-                <h1 className='land_heading'> EMERGENCY <br /></h1>
-                <p className='land_p'>We care for you!<br />REACH US OUT NOW</p>
+                <h1 className='SOSland_heading'> EMERGENCY <br /></h1>
+                <p className='SOSland_p'>We care for you!<br />REACH US OUT NOW</p>
               </div>
               <div className="landing_opt">
                 <div className="landing_btns">
-                  <button className="btn_landing btn">
+                  <button className="SOSbtn_landing btn">
                     Ambulance
                   </button>
-                  <button className="btn_landing btn">
+                  <button className="SOSbtn_landing btn">
                     Fire brigade
                   </button>
-                  <button className="btn_landing btn">
+                  <button className="SOSbtn_landing btn">
                     Police
                   </button>
                 </div>
@@ -40,11 +40,11 @@ const SOS = () => {
         </div>
       </header>
       {/* services  */}
-      <div className="services">
+      {/* <div className="services">
         <div className="services_container container">
           <div className="card_service card">
             <div className="service_card_img">
-              <div className="service_img">
+              <div className="SOSservice_img">
               <FontAwesomeIcon icon={faLink} />
               </div>
             </div>
@@ -53,13 +53,13 @@ const SOS = () => {
                 <h4>Fire</h4>
               </div>
               <div className="service_txt">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, quod.
+                
               </ div>
             </div>
           </div>
           <div className="card_service card">
             <div className="service_card_img">
-              <div className="service_img">
+              <div className="SOSservice_img">
                 <FontAwesomeIcon icon={faHospitalUser} />
               </div>
             </div>
@@ -68,13 +68,13 @@ const SOS = () => {
                 <h4>Medical aid</h4>
               </div>
               <div className="service_txt">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, tenetur.
+                
               </div>
             </div>
           </div>
           <div className="card_service card">
             <div className="service_card_img">
-              <div className="service_img">
+              <div className="SOSservice_img">
                 <FontAwesomeIcon icon={faLink} />
               </div>
             </div>
@@ -83,12 +83,12 @@ const SOS = () => {
                 <h4>Police</h4>
               </div>
               <div className="service_txt">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, expedita?
+                
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* team section  */}
       
     </ div>

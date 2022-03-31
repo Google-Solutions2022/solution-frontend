@@ -9,16 +9,22 @@ const Navbar = () => {
         <div className="App_Navbar">
             <div className="top_nav">
                 <div className="left_s">
-                    <div className="nav_logo">
+                <Link to="/"> 
+                <div className="nav_logo">
+                        
                         <div className="Logo_name">
-                            One Connect
+                          OneConnect 
                         </div>
+                        
                     </div>
+                </Link>
                 </div>
                 <div className="right_s">
                     <div className="emergency right_opt">
                         <div className="notify">
+                            <Link to="/SOS">
                             <button className="btn btn_emer">Emergency</button>
+                            </Link>
                         </div>
                     </div>
                     <div className="user right_opt">

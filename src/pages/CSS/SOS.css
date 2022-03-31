@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
-.Home_Page {
+.SOS_Page {
   width: 100%;
   overflow-x: hidden;
 }
 
 /* Home Landing Main */
 
-.overlay {
+.SOSoverlay {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -22,7 +22,7 @@
   z-index: -12;
 }
 
-.home_landing {
+.SOS_landing {
   position: relative;
   box-sizing: border-box;
   display: flex;
@@ -78,7 +78,7 @@
   width: 300px;
 }
 
-.btn_landing {
+.SOSbtn_landing {
   background-color: #B31191;
   margin: 10px;
   width: 350px;
@@ -93,7 +93,7 @@
     inset 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.land_heading {
+.SOSland_heading {
   color: #B31191;
   font-size: 38px;
   font-weight: 600;
@@ -101,7 +101,7 @@
   margin-bottom: 20px;
 }
 
-.land_p {
+.SOSland_p {
   color: #B31191;
   font-size: 18px;
   line-height: 26px;
@@ -155,7 +155,7 @@
   justify-content: center;
 }
 
-.service_img {
+.SOSservice_img {
   margin: 25px 0;
   width: 100px;
   height: 100px;
