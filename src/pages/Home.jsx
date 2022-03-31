@@ -16,8 +16,8 @@ const Home = () => {
           <div className="landing_container">
             <div className="colLanding txt_land">
               <div className="text_landing">
-                <h1 className='land_heading'> One Platfrom for <br /> All Services </h1>
-                <p className='land_p'>An initiative to bring together law, emergency services, medical services <br /> one more step nearer to you.</p>
+              <h1 className='land_heading'> OneConnect </h1>
+              <p className='land_p'><br />One Platform For All Services <br /><br />An initiative to bring together lawyers, doctors &amp; emergency services one more step closer to you!</p>
               </div>
               <div className="landing_opt">
                 <div className="landing_btns">
@@ -49,10 +49,10 @@ const Home = () => {
             </div>
             <div className="service_card_cont">
               <div className="service_head">
-                <h4>Law</h4>
+                <h4>Law &amp; Documents </h4>
               </div>
               <div className="service_txt">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, quod.
+              Get assistance with documents and legal proceedings from our esteemeted lawyers in a quick online consultancy.
               </ div>
             </div>
           </div>
@@ -64,10 +64,10 @@ const Home = () => {
             </div>
             <div className="service_card_cont">
               <div className="service_head">
-                <h4>Medical</h4>
+                <h4>Medical assistance at home</h4>
               </div>
               <div className="service_txt">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, tenetur.
+              Looking for medical assistance?<br />Consult our doctors,<br /> book an online appointment. 
               </div>
             </div>
           </div>
@@ -79,10 +79,10 @@ const Home = () => {
             </div>
             <div className="service_card_cont">
               <div className="service_head">
-                <h4>Fire & Police</h4>
+                <h4>Quick reach: <br /> Fire &amp; Police</h4>
               </div>
               <div className="service_txt">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, expedita?
+              Simply drop a message and swift services to combat the emergency (fire, police &amp; ambulance) at your doorstep.
               </div>
             </div>
           </div>
