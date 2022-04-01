@@ -1,3 +1,19 @@
+### Motivation: The motivaton of the project comes from UN goals - 2022
+
+### Aim: Tring to create a uniform service platform named "OneConnect", where a user can find the solutions of all the day to day requirements.
+
+### Breif: Here we aimed to connect lawyer, doctor and sos services like ambulance, police and fire station at a single platfrom.
+
+* We have used React for implementing the project frontend.
+* Firebase for storing the documents.
+* In the lawyer section. We have document section where a user can upload and maintain there offical records with that it can connect with the practising advocate by video calling through the web app.
+* In the lawyer section. We have document section where a user can upload and maintain there medical records and prescription means no need to maintain the physical files of the doctors with that it can connect with the practising doctor by video calling through the web app.
+
+### How to contribute: The project public. So, that any user from github can clone and contribute making the project more better.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,15 +85,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### Motivation: The motivaton of the project comes from UN goals - 2022
-
-### Aim: Tring to create a uniform service platform named "OneConnect", where a user can find the solutions of all the day to day requirements.
-
-### Breif: Here we aimed to connect lawyer, doctor and sos services like ambulance, police and fire station at a single platfrom.
-
-* We have used React for implementing the project frontend.
-* Firebase for storing the documents.
-* In the lawyer section. We have document section where a user can upload and maintain there offical records with that it can connect with the practising advocate by video calling through the web app.
-* In the lawyer section. We have document section where a user can upload and maintain there medical records and prescription means no need to maintain the physical files of the doctors with that it can connect with the practising doctor by video calling through the web app.
-
-### How to contribute: The project public. So, that any user from github can clone and contribute making the project more better.
